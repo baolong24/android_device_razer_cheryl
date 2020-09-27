@@ -316,6 +316,11 @@ PRODUCT_PACKAGES += \
     libOmxVenc \
     libstagefrighthw
 
+# Pixel Live Wallpapers
+PRODUCT_PACKAGES += \
+    PixelLiveWallpaperPrebuilt \
+    librs_jni
+
 # Power
 PRODUCT_PACKAGES += \
     android.hardware.power@1.2-service-qti
@@ -359,6 +364,9 @@ PRODUCT_PACKAGES += \
 # RIL
 PRODUCT_PACKAGES += \
     librmnetctl
+
+# Google Recorder
+TARGET_SUPPORTS_GOOGLE_RECORDER := true
 
 # Seccomp policy
 PRODUCT_COPY_FILES += \

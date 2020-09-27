@@ -2,5 +2,10 @@
   {
     "repository": "android_kernel_razer_msm8998",
     "target_path": "kernel/razer/msm8998"
-  }
+  },
+  {
+    "repository"   :"packages_apps_PixelLiveWallpaper",
+    "target_path"  :"packages/apps/PixelLiveWallpaper",
+    "branch"       :"ten",
+    "remote"       :"pixel-gitlab"
 ]
