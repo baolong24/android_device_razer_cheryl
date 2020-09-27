@@ -1,7 +1,9 @@
 [
   {
-    "repository": "android_kernel_razer_msm8998",
+    "repository": "LineageOS/android_kernel_razer_msm8998",
     "target_path": "kernel/razer/msm8998"
+	"branch": "lineage-17.1"
+	"remote": "github"
   },
   {
     "repository"   :"packages_apps_PixelLiveWallpaper",
