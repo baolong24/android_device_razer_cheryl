@@ -375,6 +375,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH)
 
+# SignApk
+PRODUCT_HOST_PACKAGES += \
+    signapk
+
 # Telephony
 PRODUCT_PACKAGES += \
     telephony-ext
