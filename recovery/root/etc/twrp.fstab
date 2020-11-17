@@ -5,7 +5,7 @@
 # mount point   fstype     device                                   device2                       flags
 /boot           emmc       /dev/block/bootdevice/by-name/boot                                     flags=display="Boot";slotselect
 /misc           emmc       /dev/block/bootdevice/by-name/misc                                     flags=display="Misc"
-/data           ext4       /dev/block/bootdevice/by-name/userdata                                 flags=encryptable=ice:aes-256-cts
+/data           ext4       /dev/block/bootdevice/by-name/userdata
 /system         ext4       /dev/block/bootdevice/by-name/system                                   flags=slotselect;backup=0
 /system_image	emmc	   /dev/block/bootdevice/by-name/system					                  flags=slotselect
 /vendor		    ext4	   /dev/block/bootdevice/by-name/vendor					                  flags=slotselect;display="Vendor";backup=0;wipeingui
