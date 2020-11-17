@@ -1,3 +1,5 @@
+PRODUCT_PLATFORM := msm8998
+
 # A/B
 AB_OTA_UPDATER := true
 
@@ -13,7 +15,17 @@ AB_OTA_POSTINSTALL_CONFIG += \
     POSTINSTALL_OPTIONAL_system=true
 
 PRODUCT_PACKAGES += \
-    otapreopt_script
+    otapreopt_script \
+	cppreopts.sh \
+    update_engine \
+    update_verifier \
+	update_engine_sideload
+
+AB_OTA_POSTINSTALL_CONFIG += \
+    RUN_POSTINSTALL_system=true \
+    POSTINSTALL_PATH_system=system/bin/otapreopt_script \
+    FILESYSTEM_TYPE_system=ext4 \
+    POSTINSTALL_OPTIONAL_system=true
 
 # Boot control
 PRODUCT_PACKAGES += \
