@@ -16,9 +16,13 @@
 
 # Inherit from those products. Most specific first.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 
 # Inherit some common omni stuff.
 $(call inherit-product, vendor/omni/config/common.mk)
+
+# Inherit from hardware-specific part of the product configuration
+$(call inherit-product, device/razer/cheryl/device.mk)
 
 # Device identifier. This must come after all inclusions
 PRODUCT_NAME := omni_cheryl

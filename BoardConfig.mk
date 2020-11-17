@@ -47,7 +47,7 @@ BOARD_RAMDISK_OFFSET := 0x01000000
 TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
 TARGET_KERNEL_CONFIG := lineageos_cheryl_defconfig
 TARGET_KERNEL_SOURCE := kernel/razer/msm8998
-TARGET_PREBUILT_KERNEL := $(DEVICE_TREE)/prebuilt/kernel
+TARGET_PREBUILT_KERNEL := device/razer/cheryl/prebuilt/kernel
 
 BOARD_KERNEL_CMDLINE := androidboot.console=ttyMSM0 androidboot.hardware=qcom
 BOARD_KERNEL_CMDLINE += user_debug=31 msm_rtb.filter=0x37 ehci-hcd.park=3
@@ -100,15 +100,13 @@ TW_IGNORE_MISC_WIPE_DATA := true
 TW_SCREEN_BLANK_ON_BOOT := true
 TW_NO_EXFAT_FUSE := true
 TW_INCLUDE_CRYPTO := true
-TARGET_CRYPTFS_HW_PATH := true
+TARGET_HW_DISK_ENCRYPTION := true
+TARGET_CRYPTFS_HW_PATH := vendor/qcom/opensource/commonsys/cryptfs_hw
 # TW_INCLUDE_CRYPTO_FBE := true
 # TW_INCLUDE_FBE_METADATA_DECRYPT := true
-# TARGET_HW_DISK_ENCRYPTION := true
 # TARGET_KEYMASTER_WAIT_FOR_QSEE := true
 RECOVERY_SDCARD_ON_DATA := true
 BOARD_HAS_NO_REAL_SDCARD := true
-
-PRODUCT_COPY_FILES += $(LOCAL_PATH)/twrp.fstab:recovery/root/etc/twrp.fstab
 
 # For TWRP DEBUG
 TWRP_INCLUDE_LOGCAT := true
