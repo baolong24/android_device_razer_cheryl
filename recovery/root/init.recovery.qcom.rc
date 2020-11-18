@@ -31,16 +31,25 @@ on early-init
 on fs
     wait /dev/block/platform/soc/1da4000.ufshc
     symlink /dev/block/platform/soc/1da4000.ufshc /dev/block/bootdevice
+
+on init
     chmod 0660 /dev/qseecom
     chown system drmrpc /dev/qseecom
     chmod 0664 /dev/ion
     chown system system /dev/ion
+    mount vfat /dev/block/bootdevice/by-name/modem /firmware ro shortname=lower uid=1000 gid=1000 dmask=227 fmask=337
+    start prepdecrypt
     install_keyring
-
-    setprop crypto.ready 1
 
 # Separate copy needed to use /sbin/linker64 instead of /system/bin/linker64
 service sbinqseecomd /sbin/qseecomd
+    user root
+    group root
+    disabled
+    seclabel u:r:recovery:s0
+
+service prepdecrypt /init.prepdecrypt.sh
+    oneshot
     user root
     group root
     disabled
@@ -100,7 +109,7 @@ on property:crypto.ready=0
     stop keystore
     stop servicemanager
 
-on property:crypto.ready=1
+on property:ro.crypto.state=encrypted
     start sbinqseecomd
 
 on property:vendor.sys.listeners.registered=true
