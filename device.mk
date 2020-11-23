@@ -458,10 +458,6 @@ PRODUCT_PACKAGES += \
     libstdc++.vendor \
     vndk_package
 
-# TextClassifier smart selection model files
-PRODUCT_PACKAGES += \
-    textclassifier.bundle1
-
 # Wifi
 PRODUCT_PACKAGES += \
     ipacm \
