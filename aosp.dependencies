@@ -1,0 +1,13 @@
+[
+  {
+    "repository": "LineageOS/android_kernel_razer_msm8998",
+    "target_path": "kernel/razer/msm8998",
+    "branch": "lineage-18.1",
+    "remote": "github",
+  },
+  {
+    "repository": "TheMuppets/proprietary_vendor_razer",
+    "target_path": "vendor/razer",
+    "branch": "lineage-18.1",
+    "remote": "github"
+]
